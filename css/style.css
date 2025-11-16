@@ -25,7 +25,7 @@ body {
 	color: var(--kk-pink);
 	font-family: 'Nunito', 'open_sansregular', Arial, sans-serif;
 	font-size: 14px;
-	margin-top: o;
+	margin: 0;
 	min-width: 0;
 }
 
@@ -71,29 +71,43 @@ p a:hover {
 	padding: 10px;
 	width: 940px;
 } */
+
+/* #page {
+	background: transparent;
+	display: block;
+	justify-items: center;
+	margin: 0 auto;
+	max-width: 1120px;
+	padding: 24px 16px 40px;
+	width: auto;
+}
+*/
+#page > div {
+	background: var(--kk-green);
+	border-radius: 28px;
+	box-shadow: 0 20px 60px rgba(21, 71, 52, 0.12);
+	padding: 28px 28px 40px 28px;
+	display: block;
+	justify-items: space-around;
+	margin: 0 auto;
+	width: auto;
+} 
+
 #page div {
-	background: #f5f1e6 url(../images/bg-logo.jpg) no-repeat left top;
+	/* background: #f5f1e6 url(../images/bg-logo.jpg) no-repeat left top; */
 	position: relative;
 	padding: 0;
-	width: 940px; 
-	overflow: hidden;
+	/* width: auto; */
 }
 #page div div#header {
 	background: var(--kk-pink);
-	position: absolute; 
-	top: 0;
-	left: 0;
-	right: 0;
-	margin: 0; 
-	padding: 0;
-	width: 100%;
+	
+	overflow: hidden;
 	padding: 0;
 	margin-left: 0;
 	margin-top: 0;
 	margin-right: 0;
 	width: auto;
-	 
-	overflow: hidden;
 }
 #page div div#header img {
 	float: left;
@@ -123,8 +137,8 @@ p a:hover {
 	border-bottom: 5px solid #a2b83c;
 }
 #page div div#body {
-	background: url(../images/separator-long.png) no-repeat bottom center;
-	padding: 0 0 10px;
+	/* background: url(../images/separator-long.png) no-repeat bottom center; */
+	padding: 10px 28px 10px;
 }
 #page div div#body div#figure {
 	font-family: 'UltraRegular';
@@ -708,24 +722,6 @@ p a:hover {
 	background: url(../images/icons.png) no-repeat -18px -84px;
 }
 
-
-#page {
-	background: transparent;
-	display: block;
-	justify-items: center;
-	margin: 0 auto;
-	max-width: 1120px;
-	padding: 24px 16px 40px;
-	width: auto;
-}
-
-#page > div {
-	background: var(--kk-green);
-	border-radius: 28px;
-	box-shadow: 0 20px 60px rgba(21, 71, 52, 0.12);
-	padding: 28px 40px 40px;
-}
-
 #header {
 	align-items: center;
 	background: none;
@@ -884,7 +880,6 @@ p {
 
 .hero-text {
 	max-width: 520px;
-	margin-top: 75px;
 }
 
 .hero-kicker {
@@ -1043,13 +1038,6 @@ p {
 .about-highlight h3 {
 	font-size: 16px;
 	margin-bottom: 6px;
-}
-
-.about-card {
-	background: #ffffff;
-	border-radius: 22px;
-	box-shadow: 0 14px 30px rgba(18, 52, 42, 0.16);
-	padding: 18px 20px;
 }
 
 .program-grid {
