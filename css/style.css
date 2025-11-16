@@ -4,8 +4,10 @@
 	--kk-lemon: #fff4b8;
 	--kk-blue: #cfe4ff;
 	--kk-pink: #ffd6e8;
+	--kk-green: #45914d;
 	--kk-deep-green: #2a572f;
-	--kk-gold: #f6c453;
+	--kk-gold: #fdbf00;
+	--kk-yellow: #ffd42d;
 	--kk-ink: #183642;
 
 	/* Font size variables */
@@ -18,11 +20,12 @@
 	}
 
 body {
-	background: radial-gradient(circle at top left, rgba(200, 244, 212, 0.65), transparent 55%), radial-gradient(circle at top right, rgba(255, 244, 184, 0.7), transparent 55%), #fdfdfd;
-	color: var(--kk-ink);
+	/* background: radial-gradient(circle at top left, var(--kk-deep-green), transparent 90%), radial-gradient(circle at top right, rgba(255, 244, 184, 0.7), transparent 55%), #fdfdfd; */
+	background: var(--kk-deep-green);
+	color: var(--kk-pink);
 	font-family: 'Nunito', 'open_sansregular', Arial, sans-serif;
 	font-size: 14px;
-	margin: 0;
+	margin-top: o;
 	min-width: 0;
 }
 
@@ -62,22 +65,35 @@ p a {
 p a:hover {
 	color: #bfcb75;
 }
-#page {
+/* #page {
 	background: url(../images/bg-page.png) repeat;
 	margin: 30px auto 0;
 	padding: 10px;
 	width: 940px;
-}
+} */
 #page div {
 	background: #f5f1e6 url(../images/bg-logo.jpg) no-repeat left top;
+	position: relative;
 	padding: 0;
-	width: 940px;
+	width: 940px; 
+	overflow: hidden;
 }
 #page div div#header {
-	background: none;
-	overflow: hidden;
+	background: var(--kk-pink);
+	position: absolute; 
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0; 
 	padding: 0;
+	width: 100%;
+	padding: 0;
+	margin-left: 0;
+	margin-top: 0;
+	margin-right: 0;
 	width: auto;
+	 
+	overflow: hidden;
 }
 #page div div#header img {
 	float: left;
@@ -695,6 +711,8 @@ p a:hover {
 
 #page {
 	background: transparent;
+	display: block;
+	justify-items: center;
 	margin: 0 auto;
 	max-width: 1120px;
 	padding: 24px 16px 40px;
@@ -702,7 +720,7 @@ p a:hover {
 }
 
 #page > div {
-	background: #ffffff;
+	background: var(--kk-green);
 	border-radius: 28px;
 	box-shadow: 0 20px 60px rgba(21, 71, 52, 0.12);
 	padding: 28px 40px 40px;
@@ -866,6 +884,7 @@ p {
 
 .hero-text {
 	max-width: 520px;
+	margin-top: 75px;
 }
 
 .hero-kicker {
@@ -1024,6 +1043,13 @@ p {
 .about-highlight h3 {
 	font-size: 16px;
 	margin-bottom: 6px;
+}
+
+.about-card {
+	background: #ffffff;
+	border-radius: 22px;
+	box-shadow: 0 14px 30px rgba(18, 52, 42, 0.16);
+	padding: 18px 20px;
 }
 
 .program-grid {
