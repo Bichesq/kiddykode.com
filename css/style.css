@@ -369,24 +369,29 @@ p {
 }
 
 .skill-card {
-	align-items: flex-start;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 12px;
-	display: flex;
-	gap: 16px;
-	padding: 20px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-areas: 
+		"icon title"
+		"desc desc";
+	align-items: center;
+	column-gap: 16px;
+	row-gap: 12px;
+	padding: 24px;
 	text-align: left;
 }
 
 .skill-card .skill-icon {
 	background: rgba(255, 255, 255, 0.2);
 	border-radius: 50%;
-	flex-shrink: 0;
-	font-size: 24px;
-	height: 48px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	grid-area: icon;
+	font-size: 24px;
+	height: 48px;
 	width: 48px;
 }
 
@@ -394,12 +399,15 @@ p {
 	color: var(--kk-lemon);
 	font-family: 'Baloo 2', cursive;
 	font-size: var(--fs-lg);
-	margin: 0 0 4px;
+	grid-area: title;
+	margin: 0;
 }
 
 .skill-card p {
 	color: #fff;
 	font-size: var(--fs-sm);
+	grid-area: desc;
+	line-height: 1.6;
 	margin: 0;
 }
 
