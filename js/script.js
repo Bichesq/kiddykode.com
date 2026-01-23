@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = [
         'images/headline-home.jpg', // Placeholder 1
         'images/coffee1.jpg',       // Placeholder 2
-        'images/coffee2.jpg'        // Placeholder 3
+        'images/coffee6.jpg'        // Placeholder 3
     ];
     const intervalTime = 5000; // 5 seconds
 
