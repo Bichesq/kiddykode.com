@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session | KiddyKode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header id="header">
+            <a href="index.html" class="kk-logo">
+                <img src="images/kiddylogo.png" width="100" alt="KIDDYKODE Logo">
+            </a>
+            <ul class="kk-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="https://studio.kiddykode.com" target="_blank">Studio</a></li>
+                <li class="current"><a href="book.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">Book</a></li>
+            </ul>
+        </header>
+        <main id="main">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> <span>/</span> <span class="current">Book a Session</span>
+            </div>
+
+            <section id="hero" class="kk-hero mini-hero">
+                <div class="hero-text">
+                    <h1>Start Your Coding Journey</h1>
+                    <p>Fill out the form below to book a free trial session or enroll in a program.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <!-- Removed .container as .site-wrapper handles width -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 60px; max-width: 1000px; margin: 0 auto;">
+                    
+                    <!-- Form Section -->
+                    <div>
+
+                        <form id="bookingForm" style="background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                            <div class="form-group">
+                                <label class="form-label" for="parentName">Parent / Guardian Name *</label>
+                                <input type="text" id="parentName" class="form-input" placeholder="Your full name" required>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Email Address *</label>
+                                    <input type="email" id="email" class="form-input" placeholder="name@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" class="form-input" placeholder="+91 / +237..." required>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label class="form-label" for="childAge">Child's Age</label>
+                                    <select id="childAge" class="form-select">
+                                        <option value="">Select Age</option>
+                                        <option value="8">8 Years</option>
+                                        <option value="9">9 Years</option>
+                                        <option value="10">10 Years</option>
+                                        <option value="11">11 Years</option>
+                                        <option value="12">12 Years</option>
+                                        <option value="13">13 Years</option>
+                                        <option value="14">14 Years</option>
+                                        <option value="15">15 Years</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="location">Preferred Location</label>
+                                    <select id="location" class="form-select">
+                                        <option value="online">Online</option>
+                                        <option value="punjab">Punjab, India</option>
+                                        <option value="yaounde">Yaoundé, Cameroon</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="program">Interested Program</label>
+                                <select id="program" class="form-select">
+                                    <option value="bootcamp">Bootcamp</option>
+                                    <option value="club">Coding Club</option>
+                                    <option value="one-on-one">One-on-One Mentoring</option>
+                                    <option value="kits">Learning Kits</option>
+                                    <option value="originals">Originals Studio</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message (Optional)</label>
+                                <textarea id="message" class="form-textarea" rows="4" placeholder="Tell us about your child's interests..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Book Session</button>
+                            
+                            <div style="margin-top: 16px; font-size: 12px; color: var(--neutral-500); text-align: center;">
+                                🔒 Your information is secure. We never share your data.
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div style="margin-top: 40px;">
+                        <h2 class="text-center mb-8">Frequently Asked Questions</h2>
+                        <!-- Placeholder, would be an accordion in JS -->
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <details style="background: var(--neutral-50); padding: 16px; border-radius: 8px;">
+                                <summary style="font-weight: 600; cursor: pointer;">Do I need a laptop?</summary>
+                                <p class="text-sm" style="margin-top: 8px;">For online sessions, yes. For in-person clubs, devices are often provided.</p>
+                            </details>
+                            <details style="background: var(--neutral-50); padding: 16px; border-radius: 8px;">
+                                <summary style="font-weight: 600; cursor: pointer;">What happens in a trial session?</summary>
+                                <p class="text-sm" style="margin-top: 8px;">We assess your child's interests and level, and they build their first small project!</p>
+                            </details>
+                            <details style="background: var(--neutral-50); padding: 16px; border-radius: 8px;">
+                                <summary style="font-weight: 600; cursor: pointer;">What age is appropriate?</summary>
+                                <p class="text-sm" style="margin-top: 8px;">Our programs are optimized for children aged 8-15 years.</p>
+                            </details>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <a href="index.html#hero" class="kk-logo kk-logo-small">
+                        <span class="logo-letter logo-k">K</span>
+                        <span class="logo-letter logo-i">I</span>
+                        <span class="logo-letter logo-d1">D</span>
+                        <span class="logo-letter logo-d2">D</span>
+                        <span class="logo-letter logo-y">Y</span>
+                        <span class="logo-letter logo-k2">K</span>
+                        <span class="logo-letter logo-o">O</span>
+                        <span class="logo-letter logo-d3">D</span>
+                        <span class="logo-letter logo-e">E</span>
+                    </a>
+                </div>
+                <p class="footnote">&copy; KIDDYKODE. All rights reserved. Empowering young minds through code in India and Cameroon.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

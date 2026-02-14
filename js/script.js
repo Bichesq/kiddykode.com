@@ -40,3 +40,127 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(nextSlide, intervalTime);
 });
+
+// =========================================
+// MERGED: NEW INTERACTIONS (Phase 3)
+// Used by: programs.html, book.html, etc.
+// =========================================
+
+    // --- Mobile Menu Toggle ---
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            const isVisible = navMenu.style.display === 'flex';
+            navMenu.style.display = isVisible ? 'none' : 'flex';
+            
+            // Simple style adjustments for mobile menu when active
+            if (!isVisible) {
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.left = '0';
+                navMenu.style.width = '100%';
+                navMenu.style.background = '#fff';
+                navMenu.style.padding = '20px';
+                navMenu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            } else {
+                navMenu.style.display = ''; // Reset to CSS default
+            }
+        });
+    }
+
+    // --- Premium Scroll Animations (IntersectionObserver) ---
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Slightly higher threshold for better "pop"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Run once
+                }
+            });
+        }, observerOptions);
+
+        // Select specific elements for different animation styles
+        // We use querySelectorAll to find elements and add reveal classes if they don't have them
+        const animatedElements = document.querySelectorAll('.program-card, .skill-card, .about-card, .section-heading, .hero-text, .contact-item');
+        
+        animatedElements.forEach((el, index) => {
+            // Add base reveal class if missing
+            if (!el.classList.contains('reveal')) {
+                el.classList.add('reveal');
+                // Alternating animations for variety
+                if (el.classList.contains('section-heading')) {
+                     el.classList.add('fade-up');
+                } else if (el.classList.contains('program-card') || el.classList.contains('skill-card')) {
+                    el.classList.add('fade-scale');
+                } else {
+                    el.classList.add('fade-up');
+                }
+            }
+            // Add stagger delays dynamically based on position in grid
+            // This is a simple heuristic: index % 3 * 0.1s
+            const delay = (index % 3) * 0.15; 
+            el.style.transitionDelay = `${delay}s`;
+
+            observer.observe(el);
+        });
+    }
+
+    // --- Glassmorphism Navbar ---
+    const navbar = document.querySelector('.navbar') || document.querySelector('.kk-nav').closest('header'); // Support both new and old nav
+    
+if (navbar) {
+        navbar.classList.add('glass-nav');
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.remove('glass-nav');
+        } else {
+            navbar.classList.add('glass-nav');
+        }
+        });
+    }
+    
+    // --- Booking Form Handling ---
+    const bookingForm = document.getElementById('bookingForm');
+    
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = bookingForm.querySelector('button[type="submit"]');
+            
+            // Loading State
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+
+            // Simulate API Call
+            setTimeout(() => {
+                // Success State
+                btn.innerText = '🎉 Booking Received!';
+                btn.style.backgroundColor = '#10b981'; // Success Green
+                btn.style.color = '#fff';
+                
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.innerText = "Thanks! We'll contact you within 24 hours to confirm your session.";
+                successMsg.style.padding = '16px';
+                successMsg.style.marginTop = '20px';
+                successMsg.style.backgroundColor = '#ecfdf5';
+                successMsg.style.color = '#065f46';
+                successMsg.style.borderRadius = '8px';
+                successMsg.style.textAlign = 'center';
+                
+                bookingForm.appendChild(successMsg);
+                bookingForm.reset();
+            }, 1500);
+        });
+    }
